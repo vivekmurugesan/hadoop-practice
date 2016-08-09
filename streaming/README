@@ -1,0 +1,11 @@
+Contains sample python code for mapper and reducer that does word count.
+
+Try the following out,
+1. echo "hadoop hadoop apache hadoop pig hive pig streaming apache" | ./mapper.py
+2. echo "hadoop hadoop apache hadoop pig hive pig streaming apache" | ./mapper.py | sort -k1,1
+3. echo "hadoop hadoop apache hadoop pig hive pig streaming apache" | ./mapper.py | sort -k1,1 | ./reducer.py
+
+Run streaming with the following cmd,
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.6.0.jar -input README.txt -output output1 -file mapper.py -mapper mapper.py -file reducer.py -reducer reducer.py
+
+ 
